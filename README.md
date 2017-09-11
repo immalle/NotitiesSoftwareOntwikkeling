@@ -15,7 +15,7 @@ te testen.
 Uiteindelijk komt een programma altijd neer op het **verwerken** van een bepaalde
 **invoer** en afhankelijk daarvan een bepaalde **uitvoer** terug te geven.
 
-De Console-class biedt dan ook enkel voor de hand liggende methods die we kunnen 
+De Console-class biedt dan ook enkele voor de hand liggende methods die we kunnen 
 gebruiken om **invoer** en **uitvoer** af te handelen.
 
 - [Console-class : basis](CSharp/Console.md)
@@ -142,7 +142,7 @@ Een selectie maakt een keuze mogelijk.
 - [Oefeningen if/then/else](CSharp/IfThenElseOef.md)
 
 Switch/case is alternatieve manier om sommige selecties makkelijker te schrijven.
-Het is eigenlijk (https://en.wikipedia.org/wiki/Syntactic_sugar)[syntactic sugar].
+Het is eigenlijk [https://en.wikipedia.org/wiki/Syntactic_sugar](syntactic sugar).
 
 - [switch/case](CSharp/SwitchCase.md) 
 
@@ -220,7 +220,7 @@ en is ook gewoon ordelijker.
 
 Het genereren van (pseudo) willekeurige getallen is interessant voor b.v. spelletjes.
 
-- :bangbang: (:hash: 6) [`Random`-class](CSharp/Random.md)
+- [`Random`-class](CSharp/Random.md)
 
 # Code lezen
 

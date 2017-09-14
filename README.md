@@ -142,7 +142,7 @@ Een selectie maakt een keuze mogelijk.
 - [Oefeningen if/then/else](CSharp/IfThenElseOef.md)
 
 Switch/case is alternatieve manier om sommige selecties makkelijker te schrijven.
-Het is eigenlijk [https://en.wikipedia.org/wiki/Syntactic_sugar](syntactic sugar).
+Het is eigenlijk [syntactic sugar](https://en.wikipedia.org/wiki/Syntactic_sugar).
 
 - [switch/case](CSharp/SwitchCase.md) 
 

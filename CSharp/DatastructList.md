@@ -26,32 +26,30 @@ Vervolgens kunnen we er basis-operaties op uitvoeren zoals
 - toevoegen
 
 ```cs
-getallen.Add(3);
+getallen.Add(3); // voeg het getal 3 toe aan de lijst
+getallen.Add(5);
+getallen.Add(7);
+getallen.Add(9);
+getallen.Add(1);
 ```
 
 - een getal verwijderen
 
 ```cs
-getallen.Remove(3);
+getallen.Remove(1); // verwijder het getal 1
 ```
 
 - een getal uitlezen via de indexer (AKA de index-operator)
 
 ```cs
-Console.WriteLine(getallen[3]);
-int x = getallen[1];
-```
-
-- een getal verwijderen
-
-```cs
-getallen.Remove(3);
+Console.WriteLine(getallen[3]); // toon het 4e getal (index begint va. 0)
+int x = getallen[1]; // zet het 2e getal uit de lijst in x
 ```
 
 - een getal verwijderen a.h.v. zijn index
 
 ```cs
-getallen.RemoveAt(0);
+getallen.RemoveAt(0); // verwijder het 1e getal uit de lijst
 ```
 
 - (in-place) sorteren

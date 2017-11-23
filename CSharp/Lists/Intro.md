@@ -1,4 +1,4 @@
-# Lists
+# List
 
 In programma's heb je zeer vaak een verzameling (collectie) van dingen nodig.
 De meest gebruikte en handigste datastructuur in C# is de `List`, meerbepaald
@@ -11,13 +11,13 @@ meegeven.
 
 Deze code initialiseert een nieuwe lege lijst:
 
-```cs
+```
 List<int> getallen = new List<int>();
 ```
 
 Dit kan ook korter geschreven worden:
 
-```cs
+```
 var getallen = new List<int>();
 ```
 
@@ -25,39 +25,42 @@ Vervolgens kunnen we er basis-operaties op uitvoeren zoals
 
 - toevoegen
 
-```cs
-getallen.Add(3); // voeg het getal 3 toe aan de lijst
-getallen.Add(5);
-getallen.Add(7);
-getallen.Add(9);
-getallen.Add(1);
+```
+getallen.Add(3);
 ```
 
 - een getal verwijderen
 
-```cs
-getallen.Remove(1); // verwijder het getal 1
+```
+getallen.Remove(3);
 ```
 
-- een getal uitlezen via de indexer (AKA de index-operator)
+- een getal uitlezen via de indexer
 
-```cs
-Console.WriteLine(getallen[3]); // toon het 4e getal (index begint va. 0)
-int x = getallen[1]; // zet het 2e getal uit de lijst in x
+```
+Console.WriteLine(getallen[3]);
+int x = getallen[1];
+```
+
+- een getal verwijderen
+
+```
+getallen.Remove(3);
 ```
 
 - een getal verwijderen a.h.v. zijn index
 
-```cs
-getallen.RemoveAt(0); // verwijder het 1e getal uit de lijst
+```
+getallen.RemoveAt(0);
 ```
 
-- (in-place) sorteren
+- sorteren
 
-```cs
+```
 getallen.Sort();
 ```
 
+> Zie boek p. 254 voor nog extra methods die de `List<T>`-class kent.
 
 # itereren
 
@@ -65,7 +68,7 @@ Itereren over een `List` doe je meestal met
 
 - een `for`-lus:
 
-```cs
+```
 for (int i = 0; i < getallen.Count; i++)
 {
   Console.WriteLine(getallen[i]);
@@ -74,7 +77,7 @@ for (int i = 0; i < getallen.Count; i++)
 
 - een `foreach`-lus:
 
-```cs
+```
 foreach(var getal in getallen) 
 {
   Console.WriteLine(getal);
@@ -88,7 +91,7 @@ In dit voorbeeld vullen we een lijst met 1000 getallen van max. 1 miljoen groot.
 Daarna sorteren we de lijst en verwijderen we het element op index 0 of m.a.w.
 verwijderen we het laagste getal uit de lijst.
 
-```cs
+```
 List<int> getallen = new List<int>();
 Random rndGen = new Random();
 
@@ -111,9 +114,9 @@ getallen.RemoveAt(0);
 ## Functies die een `List` als parameter nemen
 
 > Opgelet: `List<int>` is een ander type dan `List<string>`.
-> Bij het definiÃ«ren v.e. method moet het type dus correct zijn!
+> Bij het definiëren v.e. method moet het type dus correct zijn!
 
-```cs
+```
 static void PrintGetallen(List<int> getallenLijst)
 {
    Console.WriteLine("Er zitten {0} getal(len) in deze lijst.", getallenLijst.Count);
@@ -128,7 +131,7 @@ static void PrintGetallen(List<int> getallenLijst)
 
 ## Functies die een `List` als return-waarde hebben
 
-```cs
+```
 static List<int> GenereerGetallen(int start, int stop, int stap)
 {
    List<int> temp = new List<int>();
@@ -149,28 +152,13 @@ Deze code returnt dus een *referentie* naar een nieuwe gemaakte lijst!
 
 ## `List`'s van andere dingen
 
-### Strings
-
-```cs
-var namen = new List<string>();
-
-namen.Add("Jos");
-namen.Add("Willy");
-
-foreach(var naam in namen) {
-  Console.WriteLine("Hallo {0}!", naam);
-}
-```
-
-### Objecten
-
 In deze voorbeelden werken we steeds met `List`'s van `int`
 maar uiteraard kan je ook `List`'s maken van eigen objecten,
 zoals `Dier`, `Persoon`, ...
 
 Handig is dan dat `foreach` automatisch dit type overneemt:
 
-```cs
+```
 List<Dier> dieren = new List<Dier>();
 // ...
 
@@ -182,38 +170,14 @@ foreach(Dier d in dieren)
 
 of korter:
 
-```cs
+```
 foreach(var d in dieren)
 {
-   Console.WriteLine(d.Gewicht); // stel dat de class Dier een property Gewicht heeft
+   Console.WriteLine(d.Gewicht);
 }
 ```
 
 ## Demo
 
-- met getallen : https://dotnetfiddle.net/DTzt7Z
-- met `Dier`en : https://dotnetfiddle.net/TKu4Ox
+Zie https://gitlab.com/ib-immalle-5ib/ListDemos
 
-## Oefening : Trolnamen
-
-Schrijf een method `string GenerateTrolNaam()` die een naam voor trol genereert.
-
-De naam bestaat uit 3 letters:
-
-- eerst een medeklinker
-- daarna een klinker
-- tot slot nog een medeklinker
-
-Maak hiervoor gebruik van 2 lijsten:
-
-```cs
-var medeklinkers = new List<string>();
-var klinkers = new List<string>();
-```
-
-Voeg vervolgens telkens met `Add(...)` enkele medekliners en klinkers toe aan
-de lijst.
-
-Met een Random-generator kan je 3 keer een random **index** berekenen, waarmee
-je dus random letters selecteert en ze toevoegt aan een string. Deze string
-return je uiteindelijk.

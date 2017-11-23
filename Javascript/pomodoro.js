@@ -3,11 +3,13 @@
 
 document.body.style.backgroundColor = "black";
 
-var pomodoro = 15; // min
 var passedTime = {
     min: 0,
     sec: 0
 }
+
+const pomodoroMinutes = 2;
+const oneSecond = 100;
 
 function increasePassedTime() {
     passedTime.sec += 1;
@@ -20,9 +22,9 @@ function increasePassedTime() {
 var tmr = setInterval(_ => {
     increasePassedTime();
     console.log(passedTime);   
-    if(passedTime.min == 15 && passedTime.sec == 0) {
-        document.body.style.backgroundColor = "green";
+    if(passedTime.min == pomodoroMinutes && passedTime.sec == 0) {
+        document.body.style.backgroundColor = "lawngreen";
         clearInterval(tmr);
     } 
-  }, 1000);
+  }, oneSecond);
   

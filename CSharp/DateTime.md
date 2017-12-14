@@ -18,3 +18,7 @@ TimeSpan ts = DateTime.Now - jeuj;
 # Voorbeeld
 
 https://dotnetfiddle.net/ig7NRG
+
+# Update DotNet Core 2.0
+
+- `DateTimeOffset`
